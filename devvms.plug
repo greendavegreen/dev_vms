@@ -1,0 +1,13 @@
+[Core]
+name = DevVms
+module = devvms
+
+[Documentation]
+description = offers information about developer vms inside vmsareus
+
+[Python]
+version = 3
+
+[Errbot]
+max = 5.1.3
+

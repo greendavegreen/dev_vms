@@ -13,11 +13,12 @@ class DevVms(BotPlugin):
 
     @botcmd(split_args_with=None)
     def vm_list(self, message, args):
+        """
+        List current Vms inside vmsareus.
+        """
 
-        url = 'http://%s/api/vms' % self.config['API_HOST']
-        response = requests.get(url)
-        r = response.json()
+        response = requests.get('http://%s/api/vms' % self.config['API_HOST'])
         s = 'created   owner   branch   \n\r'
-        for item in r:
+        for item in response.json():
             s +=  '%s %s %s \n\r' % (item.get('created'), item.get('owner'), item.get('branch'))
         return s
